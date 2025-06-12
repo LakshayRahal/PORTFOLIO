@@ -1,0 +1,179 @@
+// Full Portfolio – Lakshay Rahal (Neon UI + Animated Sections)
+// React + TailwindCSS + Framer Motion
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+const SectionHeader = ({ title }) => (
+  <h2 className="text-3xl font-bold text-center md:text-left mb-6">
+    <span className="text-white">{title.split(' ')[0]}</span>
+    <span className="text-cyan-400"> {title.split(' ')[1]}</span>
+  </h2>
+);
+
+export default function Portfolio() {
+  const container = "px-6 md:px-20 py-16 bg-gray-900 text-white";
+
+  return (
+    <div className="bg-gray-900 text-white font-sans">
+      {/* Hero Section */}
+      <section className="flex flex-col md:flex-row items-center justify-between px-8 py-20">
+        <motion.img
+          src="/MEE.jpg"
+          alt="Lakshay Rahal"
+          className="rounded-full w-52 h-52 object-cover border-4 border-cyan-400 shadow-xl"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1 }}
+        />
+        <motion.div
+          className="md:ml-12 text-center md:text-left mt-6 md:mt-0"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-5xl font-bold">Lakshay Rahal</h1>
+          <p className="text-cyan-400 text-xl mt-2">RAHALUTION</p>
+          <p className="mt-4 text-sm italic">Crafting impactful solutions, one line of code at a time.</p>
+          <div className="flex gap-4 mt-4 justify-center md:justify-start">
+            <a href="https://github.com/LakshayRahal"><FaGithub className="text-2xl" /></a>
+            <a href="https://www.linkedin.com/in/lakshay-rahal-218522297/"><FaLinkedin className="text-2xl" /></a>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* About Me */}
+      <section className={`${container} bg-gray-800`}>        
+        <SectionHeader title="About Me" />
+        <motion.p
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+        >
+          Tech enthusiast, hard worker, and passionate about solving problems using technology. Dedicated to crafting meaningful solutions and continually learning in the ever-evolving tech world.
+        </motion.p>
+      </section>
+
+      {/* Skills */}
+      <section className={container}>
+        <SectionHeader title="My Skills" />
+        <div className="grid md:grid-cols-2 gap-10">
+          <div>
+            <h3 className="text-xl mb-4 underline">Technical Skills</h3>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>Languages: Python, Java, C++, JavaScript, SQL</li>
+              <li>Frameworks: React.js, Next.js, Node.js, Django, Flask, Spring Boot</li>
+              <li>AI/ML: Scikit-learn, TensorFlow, NLTK</li>
+              <li>Databases: MySQL, PostgreSQL, SQLite, MongoDB</li>
+              <li>Tools: Git, Docker, Pandas</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl mb-4 underline">Professional Skills</h3>
+            <ul className="space-y-2">
+              <li>✅ Creativity – 90%</li>
+              <li>✅ Communication – 65%</li>
+              <li>✅ Problem Solving – 75%</li>
+              <li>✅ Teamwork – 85%</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className={`${container} bg-gray-800`}>
+        <SectionHeader title="My Projects" />
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              title: 'QR Meal Share',
+              desc: 'Share leftover meal QR codes to reduce food waste. Built with MERN stack and OAuth.',
+            },
+            {
+              title: 'Deepfake Face Detector',
+              desc: 'Detect real vs. fake images using CNN, Flask & TensorFlow with live webcam analysis.',
+            },
+            {
+              title: 'College Connect',
+              desc: 'A Java + Spring Boot portal to post updates, webinars and student announcements.',
+            },
+          ].map((p, i) => (
+            <motion.div
+              key={i}
+              className="bg-gray-700 p-6 rounded-lg shadow-md"
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl font-bold text-cyan-400 mb-2">{p.title}</h3>
+              <p>{p.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Dean's List Award */}
+      <section className={container}>
+        <SectionHeader title="Dean's Award" />
+        <motion.p initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
+          Awarded in 2024 and 2025 for achieving 9.5+ SGPA at Bennett University.
+        </motion.p>
+      </section>
+
+      {/* Resume */}
+      <section className={`${container} bg-gray-800`}>
+        <SectionHeader title="My Resume" />
+        <a
+          href="/resume.pdf"
+          download
+          className="inline-block mt-4 bg-cyan-500 px-6 py-2 rounded hover:bg-cyan-600 transition-all shadow-lg"
+        >
+          Download Resume
+        </a>
+      </section>
+
+      {/* Contact */}
+      <section className={container}>
+        <SectionHeader title="Contact Me" />
+        <div className="grid md:grid-cols-2 gap-10">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-xl font-bold mb-2">Let's Work Together</h3>
+            <p className="mb-4 text-sm">Drop your message or contact me directly via email or phone.</p>
+            <p><FaEnvelope className="inline mr-2" /> lakshayrahal2005@gmail.com</p>
+            <p><FaPhone className="inline mr-2" /> +91-7988645595</p>
+            <div className="flex gap-4 mt-4">
+              <FaGithub className="text-xl" />
+              <FaTwitter className="text-xl" />
+              <FaInstagram className="text-xl" />
+              <FaLinkedin className="text-xl" />
+            </div>
+          </motion.div>
+
+          <motion.form
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            <input type="text" placeholder="Enter Your Name" className="w-full p-3 rounded bg-gray-800 border border-gray-600" />
+            <input type="email" placeholder="Enter Your Email" className="w-full p-3 rounded bg-gray-800 border border-gray-600" />
+            <input type="text" placeholder="Enter Your Subject" className="w-full p-3 rounded bg-gray-800 border border-gray-600" />
+            <textarea placeholder="Enter Your Message" className="w-full p-3 rounded bg-gray-800 border border-gray-600 h-32"></textarea>
+            <button
+              type="submit"
+              className="bg-cyan-500 hover:bg-cyan-600 px-6 py-2 rounded shadow-xl transition-all w-full"
+            >
+              Submit
+            </button>
+          </motion.form>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,0 +1,143 @@
+
+.projects {
+  padding: 4rem 5rem;
+  text-align: center;
+  color: white;
+}
+
+
+.pr-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+
+.pr-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(17, 24, 39, 0.9);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 195, 0.12);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.pr-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 45px rgba(0, 255, 195, 0.25);
+}
+
+.video {
+  width: 50%;
+  padding: 2.5rem; 
+  box-sizing: border-box;
+}
+
+.video video {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+
+.description {
+  width: 50%;
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #f2f2f2;
+}
+
+.description h1 {
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pr-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #dcdcdc;
+  line-height: 1.6;
+}
+
+
+.tech-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+
+.tech {
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding: 0.1rem 0.6rem;
+  color: white;
+  background: #3B82F6;
+}
+
+
+.pr-button {
+  background: rgba(19, 19, 19, 0.772);
+  border: none;
+  color: white;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(124, 48, 238, 0.25);
+}
+
+.pr-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(124, 48, 238, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+  .pr-container {
+    flex-direction: column-reverse;
+  }
+  .col{
+    flex-direction: column;
+  }
+  .projects{
+    padding:2rem 2.5rem;
+  }
+
+  .video, .description {
+    width: 100%;
+    padding: 1rem;
+  }
+  .pr-button{
+    padding:1rem 3rem;
+  }
+
+  .description {
+    text-align: center;
+  }
+}
+.video video {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.video video:hover {
+  transform: scale(1.02);
+}
+
