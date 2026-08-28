@@ -20,7 +20,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between px-8 py-20">
         <motion.img
-          src="/MEE.jpg"
+          src="/LakshayRahal.png"
           alt="Lakshay Rahal"
           className="rounded-full w-52 h-52 object-cover border-4 border-cyan-400 shadow-xl"
           initial={{ scale: 0 }}
