@@ -68,3 +68,34 @@
       font-weight: 400;
     }
 }
+/* =====================================================
+   SERVICENOW & AWS SKILLS
+===================================================== */
+
+.servicenow-skill {
+  border: 1px solid #08d6d6 !important;
+  color: #08d6d6 !important;
+}
+
+.servicenow-skill i {
+  margin-right: 5px;
+}
+
+.aws-skill {
+  border: 1px solid #ffad32 !important;
+  color: #ffad32 !important;
+}
+
+.aws-skill i {
+  margin-right: 5px;
+}
+
+.skill {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+}
